@@ -27,7 +27,7 @@ void second_task()
 	{
 		for (int j = 0; j < 2; j++)
 		{
-			cout << "Element[" << i << "]" << "[" << j << "] = " << massTwodim[i][j] << " /t ";
+			cout << "Element[" << i << "]" << "[" << j << "] = " << massTwodim[i][j] << " \t ";
 		}
 		cout << endl;
 	}
@@ -66,7 +66,7 @@ void fourth_task()
 			cout << "Веддите число от 0 до 9" << endl;
 			int SelectNum;
 			cin >> SelectNum;
-			if (0 <= SelectNum <= 9)
+			if (0 <= SelectNum or 9 >= SelectNum )
 			{
 				int k = 0;
 				while (k <= size(oneDimArray))
@@ -98,4 +98,85 @@ void fourth_task()
 	} while (numSelect!=0);
 
 
+}
+
+// 5. Написать  программу, реализующую сортировку массива. 
+// Сортировка должна происходить следующим образом: 
+//		Программа просматривает все элементы массива и находит максимальный и минимальный элементы. 
+//		Максимальный меняет местами с последним элементом, а минимальный – с первым. 
+//		Далее просматривает все элементы кроме первого и последнего, 
+//		находит максимум и минимум и меняет их соответственно с предпоследним и вторым элементами. 
+//		И .т.д. пока массив не будет отсортирован.
+void fifthTask()
+{
+	int arrayNum[20]{ 3,109,-1,7,-30,52,100,27,69,99,1000,132,555,777,888,999,233,-500,30213,1 };
+	
+	{
+		cout << "Начальный массив: ";
+		for (int q = 0; q < size(arrayNum); q++)
+		{
+			cout << arrayNum[q] << "\t";
+
+		}
+		cout << endl;
+	}
+
+	int temp;
+	for (int i = 0; i < size(arrayNum); i++)
+	{
+		for (int h = i+1; h < size(arrayNum); h++)
+		{
+			if (arrayNum[i] > arrayNum[h]) {
+				temp = arrayNum[i];
+				arrayNum[i] = arrayNum[h];
+				arrayNum[h] = temp;
+			}
+		}
+	}
+
+	{
+		cout << "Отсортированный массив: ";
+		for (int q = 0; q < size(arrayNum); q++)
+		{
+			cout << arrayNum[q] << "\t";
+
+		}
+		cout << endl;
+	}
+
+}
+
+void SixthTask()
+{
+	int arrayTwoDim[15][2]{ 
+		{ 1,-3 }, 
+		{400, 123},
+		{21414, 9000}, 
+		{-655423, 3123}, 
+		{544, 213}, 
+		{5, 32}, 
+		{132, 231}, 
+		{43, 125}, 
+		{543, 12313}, 
+		{1321,23123} 
+	};
+	int minNum = 0;
+	int maxNum = 0;
+	for (int i = 0; i < size(arrayTwoDim); i++)
+	{
+		for (int j = 0; j < size(arrayTwoDim); j++)
+		{
+			if (arrayTwoDim[i][j]>maxNum)
+			{
+				maxNum = arrayTwoDim[i][j];
+			}
+			else if (arrayTwoDim[i][j]<minNum)
+			{
+				minNum = arrayTwoDim[i][j];
+			}
+
+		}
+	}
+	cout << "Max number: " << maxNum << endl;
+	cout << "Min number: " << minNum << endl;
 }
