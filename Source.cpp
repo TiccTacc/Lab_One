@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 
-void first_task(), second_task(), third_task(), fourth_task();
+void first_task(), second_task(), third_task(), fourth_task(), fifthTask(), SixthTask();
 
-enum Task_lr_one { first = 1, second = 2, third = 3, fourth = 4 };
+enum Task_lr_one { first = 1, second = 2, third = 3, fourth = 4, fifth = 5, Six = 6 };
 
 int main() 
 {
@@ -18,6 +18,8 @@ int main()
 		cout << "2) Задача ""двумерные массив""" << endl;
 		cout << "3) Задача ""Символьный массив""" << endl;
 		cout << "4) Задача ""Поиск заданного значение в числовом массиве и вывод суммы массива""" << endl;
+		cout << "5) Задача ""Сортировка массив методом пузырька""" << endl;
+		cout << "6) Задача ""Поиск максимального и минимального значений массива.""" << endl;
 		cin >> Selecttask;
 
 		switch (Selecttask)
@@ -33,6 +35,12 @@ int main()
 			break;
 		case fourth:
 			fourth_task();
+			break;
+		case fifth:
+			fifthTask();
+			break;
+		case Six:
+			SixthTask();
 			break;
 		default:
 			cout << "Так дела не делаются!" << endl;
