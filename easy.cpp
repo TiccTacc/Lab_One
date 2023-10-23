@@ -1,4 +1,6 @@
-#include<iostream>
+#include <iostream>
+#include <string>
+#include <cstdlib>
 using namespace std;
 
 const int sizeArray{ 10 };	// максимальная длина массивa
@@ -179,4 +181,92 @@ void SixthTask()
 	}
 	cout << "Max number: " << maxNum << endl;
 	cout << "Min number: " << minNum << endl;
+}
+
+//5. Реализовать заполнение массива «змейкой».
+void seventhTask()
+{
+	int arrayTwoDim[15][4];
+
+	int snake = -1;
+	for (int i = 0; i <= 15; i++)
+	{
+		if (snake == 4)
+		{
+			snake--;
+			for (;snake >= 0; snake--)
+			{
+				cout << "Select number, index (" << i << "," << snake << "):";
+				cin >> arrayTwoDim[i][snake];
+				cout << endl;
+			}
+		}
+		else if (snake == -1)
+		{
+			snake++;
+			for (;snake <= 3; snake++)
+			{
+				cout << "Select number, index (" << i << "," << snake << "):";
+				cin >> arrayTwoDim[i][snake];
+				cout << endl;
+			}
+		}
+	}
+}
+
+//6. Написать функцию, считающую длину строки 
+void eighthTask()
+{
+	char textWrite[5000]; // для того чтобы считать необходимо подключить СБ <string.h>
+	cout << "Enter the text:";
+	cin >> textWrite;
+	int i = 0;
+
+	while (textWrite[i] != '\0')
+	{
+		i++;
+	}
+	cout << "Number of characters:" << i << endl;
+}
+
+//7.	Написать функцию, удаляющую из строки повторяющиеся символы 
+void ninethTask()
+{
+	string textWrite;
+	cout << "Enter the text: "; //<< endl;
+	cin >> textWrite;
+	getline(cin, textWrite);
+	string textOut;
+
+	int i = 0;
+	for (int i = 0; i < size(textWrite); i++)
+	{
+		bool repeadSumb = false;
+		if (size(textOut) == 0)
+		{
+			textOut = textWrite[i];
+			
+		}
+		else
+		{
+			for (int j = 0; j < size(textOut); j++)
+			{
+				if (textWrite[i] == textOut[j])
+				{
+					repeadSumb = true;
+				}
+			}
+			if (not repeadSumb)
+			{
+				textOut = textOut + textWrite[i];
+			}
+		}
+	}
+	cout << "Dont repead simbols:" << textOut << endl;
+}
+
+//8.	Написать программу реализующую шифрование/дешифрование шифром Цезаря.
+void tenthTask()
+{
+
 }
