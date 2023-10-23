@@ -232,10 +232,10 @@ void eighthTask()
 //7.	Написать функцию, удаляющую из строки повторяющиеся символы 
 void ninethTask()
 {
-	string textWrite;
+	char textWrite[5000];
 	cout << "Enter the text: "; //<< endl;
-	cin >> textWrite;
-	getline(cin, textWrite);
+	cin.getline(textWrite,5000);
+	//getline(cin, textWrite);
 	string textOut;
 
 	int i = 0;
@@ -266,7 +266,38 @@ void ninethTask()
 }
 
 //8.	Написать программу реализующую шифрование/дешифрование шифром Цезаря.
+int getArrayalp();
+
 void tenthTask()
 {
+	char textWrite[5000];
+	char textOut[5000];
+	int shift = 1;
+	char Cyrillic = 'n';
+	
+	//текст
+	cout << "Enter the cipher:";
+	cin.getline(textWrite, 5000);
+	
+	// Сдвиг
+	cout << "Enter the shift";
+	cin >> shift;
+	
+	//использовать киррилицу?
+	cout << "Cyrillic alphabet (y/n)?";
+	cin >> Cyrillic;
 
+	int alphabet = getArrayalp((Cyrillic =='y'));
+
+}
+
+int getArrayalp(bool cyr = false)
+{
+	if (cyr)
+	{
+		int alphabet[33]{};
+	}
+	
+
+	return alphabet;
 }
